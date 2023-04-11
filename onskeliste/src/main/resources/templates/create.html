@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
     <title>Opret produkt</title>
 </head>
 
@@ -11,13 +12,19 @@
     <h1>Tilføj et produkt til ønskelisten</h1>
 
     <form action="create" method="post">
-        <label for="name-field">Produkt navn:</label>
+
+<!--        <label for="name-field">Produkt navn</label>-->
+        <p>Produkt navn</p>
         <input id="name-field" name="product-name" type="text">
 
-        <label for="price-field">Produkt pris:</label>
+<!--        <label for="price-field">Produkt pris</label>-->
+        <p>Produkt pris</p>
         <input id="price-field" name="product-price" type="number">
 
-        <input type="submit" value="Opret produkt">
+        <div class="button-center">
+            <input type="submit" value="Opret produkt" class="addButton">
+        </div>
+
     </form>
 
 </div>

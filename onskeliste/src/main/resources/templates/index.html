@@ -2,38 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="index.css"/>
-    <title>Produkter</title>
-
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <title>Ønskeliste</title>
 </head>
-
-<style>
-
-    #products {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 50%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #products td, #products th {
-        border: 1px solid #ddd;
-        padding: 8px;
-
-    }
-    #products tr:nth-child(even){background-color: #f2f2f2;}
-
-    #products tr:hover {background-color: #ddd;}
-    #products th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: center;
-        background-color: #04AA6D;
-        color: white;
-    }
-
-</style>
 
 <body>
 
@@ -71,7 +42,9 @@
         </tbody>
 
     </table>
-     <a href="/create"><center>Tilføj nyt ønske</center></a>
+    <div class="button-center">
+        <a href="/create"><button class="addButton">Tilføj nyt ønske</button></a>
+    </div>
 </div>
 
 </body>

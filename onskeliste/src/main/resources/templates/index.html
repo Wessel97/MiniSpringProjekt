@@ -18,13 +18,13 @@
         <tbody>
         <tr th:each="product : ${products}">
             <td th:text="${product.id}">
-                42
+                -99
             </td>
             <td th:text="${product.name}">
-                meningen med alting
+                bob
             </td>
             <td th:text="${product.price}">
-                666
+                -999
             </td>
             <td>
                 <a th:href="@{'/update/' + ${product.id}}" href="/update">Opdater</a>

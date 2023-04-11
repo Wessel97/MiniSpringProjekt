@@ -1,7 +1,6 @@
 package com.example.onskeliste.repository;
 
 import com.example.onskeliste.model.Product;
-import com.example.onskeliste.utility.ConnectionManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
@@ -21,10 +20,11 @@ public class ProductRepository {
     @Value("${spring.datasource.password}")
     private String PWD;
 
+
     public List<Product> getAll(){
         List<Product> productList = new ArrayList<>();
         try {
-            Connection connection = ConnectionManager.getConnection(DB_URL, UID, PWD);
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
             Statement statement = connection.createStatement();
             final String SQL_QUERY = "SELECT * FROM products";
             ResultSet resultSet = statement.executeQuery(SQL_QUERY);
@@ -48,7 +48,7 @@ public class ProductRepository {
     public void addProduct(Product product){
         try{
             //connect to db
-            Connection connection = ConnectionManager.getConnection(DB_URL, UID, PWD);
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
             final String CREATE_QUERY = "INSERT INTO products(name, price) VALUES  (?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_QUERY);
 
@@ -70,7 +70,7 @@ public class ProductRepository {
 
         try {
             //connect db
-            Connection connection = ConnectionManager.getConnection(DB_URL, UID, PWD);
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
             //prepared statement
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
@@ -98,7 +98,7 @@ public class ProductRepository {
         product.setId(id);
         try {
             //db connection
-            Connection connection = ConnectionManager.getConnection(DB_URL, UID, PWD);
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
             //prepared statement
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_QUERY);
@@ -130,7 +130,7 @@ public class ProductRepository {
 
         try {
             //connect til db
-            Connection connection = ConnectionManager.getConnection(DB_URL, UID, PWD);
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
             //create statement
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_QUERY);

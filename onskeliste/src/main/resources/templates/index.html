@@ -5,38 +5,40 @@
     <title>Produkter</title>
 </head>
 <body>
+
 <div class="container">
     <h1>Ønskeliste</h1>
+
     <table>
+
         <thead>
         <th>ID</th>
         <th>Produktnavn</th>
         <th>Pris</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Opdater</th>
+        <th>Slet</th>
         </thead>
+
         <tbody>
         <tr th:each="product : ${products}">
-            <td th:text="${product.id}">
-                -99
-            </td>
-            <td th:text="${product.name}">
-                bob
-            </td>
-            <td th:text="${product.price}">
-                -99
-            </td>
+
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+
             <td>
                 <a th:href="@{'/update/' + ${product.id}}" href="/update">Opdater</a>
             </td>
+
             <td>
                 <a th:href="@{'/delete/' + ${product.id}}" href="/delete">Slet</a>
             </td>
+
         </tr>
         </tbody>
 
     </table>
-    <a href="/create">Tilføj nyt produkt</a>
+    <a href="/create">Tilføj nyt ønske</a>
 </div>
 
 </body>

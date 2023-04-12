@@ -100,4 +100,11 @@ public class HomeController {
         return "reserve";
     }
 
+    @GetMapping("/reservation")
+    public String showReservation(Model model) {
+        return "reservation";
+    }
+
+
+
 }

@@ -32,7 +32,7 @@
             <td th:text="${product.amount}"></td>
             <td th:text="${product.link}"></td>
             <td>
-                <a><button class="greenButton">Reserver</button></a>
+                <input type="checkbox">
             </td>
 
         </tr>
@@ -40,6 +40,9 @@
 
     </table>
 
+    <div class="button-center">
+        <a href="/reservation"><button class="addButton">Reserver</button></a>
+    </div>
 
 </div>
 

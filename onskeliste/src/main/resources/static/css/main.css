@@ -1,3 +1,23 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 #products {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -12,7 +32,7 @@
 
 
 }
-#products tr:nth-child(even) {
+#products tr {
     background-color: #f2f2f2;
 }
 
@@ -114,5 +134,9 @@ p {
 
 h1 {
     text-align: center;
+}
+
+body {
+    background-color: #FFFFFF;
 }
 

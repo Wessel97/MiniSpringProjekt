@@ -15,7 +15,6 @@
 
         <thead>
         <tr>
-            <th>ID</th>
             <th>Produktnavn</th>
             <th>Pris</th>
             <th>Antal</th>
@@ -28,7 +27,6 @@
         <tbody>
         <tr th:each="product : ${products}">
 
-            <td th:text="${product.id}"></td>
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
             <td th:text="${product.amount}"></td>

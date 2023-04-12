@@ -34,11 +34,15 @@ public class HomeController {
     //fra form action
     @PostMapping("/create")
     public String createProduct(@RequestParam("product-name") String newName,
-                                @RequestParam("product-price") double newPrice) {
+                                @RequestParam("product-price") double newPrice,
+                                @RequestParam("product-amount") int newAmount,
+                                @RequestParam("product-link") String newLink) {
         //lave et nyt Product
         Product newProduct = new Product();
         newProduct.setPrice(newPrice);
         newProduct.setName(newName);
+        newProduct.setAmount(newAmount);
+        newProduct.setLink(newLink);
 
         //gem nyt produkt
         productRepository.addProduct(newProduct);
@@ -62,9 +66,11 @@ public class HomeController {
     @PostMapping("/update")
     public String updateProduct(@RequestParam("product-name") String updateName,
                                 @RequestParam("product-price") double updatePrice,
+                                @RequestParam("product-amount") int updateAmount,
+                                @RequestParam("product-link") String updateLink,
                                 @RequestParam("product-id") int updateId) {
         //lav produkt ud fra parametre
-        Product updateProduct = new Product(updateId, updateName, updatePrice);
+        Product updateProduct = new Product(updateId, updateName, updatePrice, updateAmount, updateLink);
 
         //kald opdater i repository
         productRepository.updateProduct(updateProduct);

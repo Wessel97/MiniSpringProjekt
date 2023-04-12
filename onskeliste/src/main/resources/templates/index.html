@@ -18,6 +18,8 @@
             <th>ID</th>
             <th>Produktnavn</th>
             <th>Pris</th>
+            <th>Antal</th>
+            <th>Link</th>
             <th>Opdater</th>
             <th>Slet</th>
         </tr>
@@ -29,6 +31,8 @@
             <td th:text="${product.id}"></td>
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
+            <td th:text="${product.amount}"></td>
+            <td th:text="${product.link}"></td>
 
             <td>
                 <a th:href="@{'/update/' + ${product.id}}" href="/update">Opdater</a>

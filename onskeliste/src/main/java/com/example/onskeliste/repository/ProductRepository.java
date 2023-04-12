@@ -32,7 +32,9 @@ public class ProductRepository {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
                 double price = resultSet.getDouble(3);
-                Product product = new Product(id, name, price);
+                int amount = resultSet.getInt(4);
+                String link = resultSet.getString(5);
+                Product product = new Product(id, name, price, amount, link);
                 productList.add(product);
                 System.out.println(product);
             }
@@ -49,12 +51,14 @@ public class ProductRepository {
         try{
             //connect to db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
-            final String CREATE_QUERY = "INSERT INTO products(name, price) VALUES  (?, ?)";
+            final String CREATE_QUERY = "INSERT INTO products(name, price, amount, link) VALUES  (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_QUERY);
 
             //set attributer i prepared statement
             preparedStatement.setString(1, product.getName());
             preparedStatement.setDouble(2, product.getPrice());
+            preparedStatement.setInt(3, product.getAmount());
+            preparedStatement.setString(4, product.getLink());
 
             //execute statement
             preparedStatement.executeUpdate();
@@ -66,7 +70,7 @@ public class ProductRepository {
 
     public void updateProduct(Product product){
         //SQL statement
-        final String UPDATE_QUERY = "UPDATE products SET name = ?, price = ? WHERE id = ?";
+        final String UPDATE_QUERY = "UPDATE products SET name = ?, price = ?, amount = ?, link = ? WHERE id = ?";
 
         try {
             //connect db
@@ -78,10 +82,15 @@ public class ProductRepository {
             //set parameters
             String name = product.getName();
             double price = product.getPrice();
+            int amount  =  product.getAmount();
+            String link = product.getLink();
             int id = product.getId();
+
             preparedStatement.setString(1, name);
             preparedStatement.setDouble(2, price);
-            preparedStatement.setInt(3, id);
+            preparedStatement.setInt(3, amount);
+            preparedStatement.setString(4, link);
+            preparedStatement.setInt(5, id);
 
             //execute statement
             preparedStatement.executeUpdate();

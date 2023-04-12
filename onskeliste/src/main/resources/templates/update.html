@@ -20,6 +20,12 @@
         <label for="price-field">Produkt pris:</label>
         <input id="price-field" name="product-price" type="number" th:value="${product.price}">
 
+        <label for="amount-field">Produkt Antal:</label>
+        <input id="amount-field" name="product-amount" type="number" th:value="${product.amount}">
+
+        <label for="link-field">Produkt link:</label>
+        <input id="link-field" name="product-link" type="text" th:value="${product.link}">
+
         <input type="submit" value="Opdater produkt">
     </form>
 

@@ -4,6 +4,7 @@ import com.example.onskeliste.model.Product;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
+import java.awt.datatransfer.DataFlavor;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -155,5 +156,6 @@ public class ProductRepository {
             e.printStackTrace();
         }
     }
+
 
 }

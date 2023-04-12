@@ -87,4 +87,14 @@ public class HomeController {
         //returner til index-siden
         return "redirect:/";
     }
+
+    @GetMapping("/reserve")
+    public String showReserve(Model model) {
+        model.addAttribute("products", productRepository.getAll());
+        return "reserve";
+    }
+
+
+
+
 }

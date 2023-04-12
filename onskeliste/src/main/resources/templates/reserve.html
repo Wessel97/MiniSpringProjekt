@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
-    <title>Ønskeliste</title>
+    <title>Reservering</title>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Ønskeliste</h1>
+    <h1>Reserver</h1>
 
     <table id='products'>
 
@@ -19,8 +19,7 @@
             <th>Pris</th>
             <th>Antal</th>
             <th>Link</th>
-            <th>Opdater</th>
-            <th>Slet</th>
+            <th>Reserver</th>
         </tr>
         </thead>
 
@@ -33,24 +32,16 @@
             <td th:text="${product.link}"></td>
 
             <td>
-                <a th:href="@{'/update/' + ${product.id}}" href="/update">Opdater</a>
+                <p>(Reserver)</p>
             </td>
 
-            <td>
-                <a th:href="@{'/delete/' + ${product.id}}" href="/delete">Slet</a>
-            </td>
+
 
         </tr>
         </tbody>
 
     </table>
-    <div class="button-center">
-        <a href="/create"><button class="addButton">Tilføj nyt ønske</button></a>
-    </div>
 
-    <div class="button-center">
-        <a href="/reserve"><button class="addButton">Del</button></a>
-    </div>
 </div>
 
 </body>

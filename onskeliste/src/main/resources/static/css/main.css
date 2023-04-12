@@ -10,6 +10,7 @@
     border: 1px solid #ddd;
     padding: 8px;
 
+
 }
 #products tr:nth-child(even) {
     background-color: #f2f2f2;

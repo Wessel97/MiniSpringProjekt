@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="../static/css/main.css" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
     <title>Opdater produkt</title>
 </head>
 
@@ -14,19 +14,21 @@
     <form action="/update" method="post">
         <input id="id-field" name="product-id" type="hidden" th:value="${product.id}">
 
-        <label for="name-field">Produkt navn:</label>
+        <p>Produkt navn</p>
         <input id="name-field" name="product-name" type="text" th:value="${product.name}">
 
-        <label for="price-field">Produkt pris:</label>
+        <p>Produkt pris</p>
         <input id="price-field" name="product-price" type="number" th:value="${product.price}">
 
-        <label for="amount-field">Produkt Antal:</label>
+        <p>Produkt antal</p>
         <input id="amount-field" name="product-amount" type="number" th:value="${product.amount}">
 
-        <label for="link-field">Produkt link:</label>
+        <p>Produkt link</p>
         <input id="link-field" name="product-link" type="text" th:value="${product.link}">
 
-        <input type="submit" value="Opdater produkt">
+        <div class="button-center">
+            <input class="addButton" type="submit" value="Opdater produkt">
+        </div>
     </form>
 
 </div>

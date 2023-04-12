@@ -34,11 +34,11 @@
             <td th:text="${product.link}"></td>
 
             <td>
-                <a th:href="@{'/update/' + ${product.id}}" href="/update">Opdater</a>
+                <a th:href="@{'/update/' + ${product.id}}" href="/update"><button class="greenButton">Opdater</button></a>
             </td>
 
             <td>
-                <a th:href="@{'/delete/' + ${product.id}}" href="/delete">Slet</a>
+                <a th:href="@{'/delete/' + ${product.id}}" href="/delete"><button class="greenButton">Slet</button></a>
             </td>
 
         </tr>

@@ -123,8 +123,12 @@ public class ProductRepository {
             resultSet.next();
             String name = resultSet.getString(2);
             double price = resultSet.getDouble(3);
+            int amount = resultSet.getInt(4);
+            String link = resultSet.getString(5);
             product.setName(name);
             product.setPrice(price);
+            product.setAmount(amount);
+            product.setLink(link);
         } catch (SQLException e){
             System.out.println("Could not find product");
             e.printStackTrace();

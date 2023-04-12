@@ -24,10 +24,10 @@ public class HomeController {
     }
 
 
-    @GetMapping("/index")
+    @GetMapping("/list")
     public String index(Model model) {
         model.addAttribute("products", productRepository.getAll());
-        return "index";
+        return "list";
     }
 
     //fra anchor i index
@@ -54,7 +54,7 @@ public class HomeController {
         productRepository.addProduct(newProduct);
 
         //tilbage til produktlisten
-        return "redirect:/index";
+        return "redirect:/list";
     }
 
     @GetMapping("/update/{id}")
@@ -82,7 +82,7 @@ public class HomeController {
         productRepository.updateProduct(updateProduct);
 
         //rediriger til oversigtssiden
-        return "redirect:/index";
+        return "redirect:/list";
     }
 
     @GetMapping("/delete/{id}")
@@ -91,7 +91,7 @@ public class HomeController {
         productRepository.deleteById(id);
 
         //returner til index-siden
-        return "redirect:/index";
+        return "redirect:/list";
     }
 
     @GetMapping("/reserve")

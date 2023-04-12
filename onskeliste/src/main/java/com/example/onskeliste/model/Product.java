@@ -17,7 +17,6 @@ public class Product {
         this.price = price;
         this.amount = amount;
         this.link = link;
-
     }
 
     public int getId() {

@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS wishlist;
 CREATE SCHEMA wishlist ;
 DROP TABLE IF EXISTS products;

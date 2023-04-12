@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="/images/vault.png" rel="icon" type="image/icon type">
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
     <title>Opret produkt</title>
 </head>
@@ -13,11 +14,9 @@
 
     <form action="create" method="post">
 
-<!--        <label for="name-field">Produkt navn</label>-->
         <p>Produkt navn</p>
         <input id="name-field" name="product-name" type="text">
 
-<!--        <label for="price-field">Produkt pris</label>-->
         <p>Produkt pris</p>
         <input id="price-field" name="product-price" type="number">
 

@@ -20,8 +20,8 @@
             <th>Pris</th>
             <th>Antal</th>
             <th>Link</th>
-            <th>Reserver</th>
-            <th>Klik her for at reservere</th>
+            <th>Reserveret</th>
+            <th>Reservation</th>
         </tr>
         </thead>
 
@@ -34,10 +34,9 @@
             <td th:text="${product.link}"></td>
             <td th:text="${product.reserved}"></td>
             <td>
-            <td>
                 <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button class="greenButton">Resevere</button></a>
             </td>
-            </td>
+
 
         </tr>
         </tbody>

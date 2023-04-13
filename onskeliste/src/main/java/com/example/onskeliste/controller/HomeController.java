@@ -74,9 +74,10 @@ public class HomeController {
                                 @RequestParam("product-price") double updatePrice,
                                 @RequestParam("product-amount") int updateAmount,
                                 @RequestParam("product-link") String updateLink,
-                                @RequestParam("product-id") int updateId) {
+                                @RequestParam("product-id") int updateId,
+                                @RequestParam("product-reversed") String updateReserved){
         //lav produkt ud fra parametre
-        Product updateProduct = new Product(updateId, updateName, updatePrice, updateAmount, updateLink);
+        Product updateProduct = new Product(updateId, updateName, updatePrice, updateAmount, updateLink, updateReserved);
 
         //kald opdater i repository
         productRepository.updateProduct(updateProduct);
@@ -100,10 +101,37 @@ public class HomeController {
         return "reserve";
     }
 
-    @GetMapping("/reservation")
-    public String showReservation(Model model) {
-        return "reservation";
+    @GetMapping("/reserve/{id}")
+    public String showReserve(@PathVariable("id") int updateId, Model model) {
+        //find produkt med id=updateId i databasen
+        Product updateReserve = productRepository.findProductById(updateId);
+
+        //tilføj produkt til viewmodel, så det kan bruges i Thymeleaf
+        model.addAttribute("product", updateReserve);
+
+        //fortæl Spring hvilken HTML-side, der skal vises
+        return "redirect:/reserve";
     }
+
+
+    @PostMapping("/reserve")
+    public String getUpdateReserved(@RequestParam("product-name") String updateName,
+                                @RequestParam("product-price") double updatePrice,
+                                @RequestParam("product-amount") int updateAmount,
+                                @RequestParam("product-link") String updateLink,
+                                @RequestParam("product-id") int updateId,
+                                @RequestParam("product-reserved") String updateReserved){
+        //lav produkt ud fra parametre
+        Product updateProduct = new Product(updateId, updateName, updatePrice, updateAmount, updateLink, updateReserved);
+
+        //kald opdater i repository
+        productRepository.updateReserved(updateProduct);
+
+        //rediriger til oversigtssiden
+        return "reserve";
+
+    }
+
 
 
 

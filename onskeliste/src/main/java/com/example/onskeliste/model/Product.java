@@ -8,15 +8,18 @@ public class Product {
     private int amount;
     private String link;
 
+    private String reserved;
+
     public Product() {
     }
 
-    public Product(int id, String name, double price, int amount, String link) {
+    public Product(int id, String name, double price, int amount, String link, String reserved) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.amount = amount;
         this.link = link;
+        this.reserved = reserved;
     }
 
     public int getId() {
@@ -59,9 +62,17 @@ public class Product {
         this.link = link;
     }
 
+    public String getReserved() {
+        return reserved;
+    }
+
+    public void setReserved(String reserved) {
+        this.reserved = reserved;
+    }
+
     @Override
     public String toString() {
         return "Product{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + ", amount=" +
-                amount + ", link=" + link + '}';
+                amount + ", link=" + link + ", reserved" + reserved +'}';
     }
 }

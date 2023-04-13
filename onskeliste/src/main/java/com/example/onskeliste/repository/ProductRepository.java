@@ -35,7 +35,8 @@ public class ProductRepository {
                 double price = resultSet.getDouble(3);
                 int amount = resultSet.getInt(4);
                 String link = resultSet.getString(5);
-                Product product = new Product(id, name, price, amount, link);
+                String reserved = resultSet.getString(6);
+                Product product = new Product(id, name, price, amount, link, reserved);
                 productList.add(product);
                 System.out.println(product);
             }
@@ -60,6 +61,7 @@ public class ProductRepository {
             preparedStatement.setDouble(2, product.getPrice());
             preparedStatement.setInt(3, product.getAmount());
             preparedStatement.setString(4, product.getLink());
+
 
             //execute statement
             preparedStatement.executeUpdate();
@@ -125,10 +127,12 @@ public class ProductRepository {
             double price = resultSet.getDouble(3);
             int amount = resultSet.getInt(4);
             String link = resultSet.getString(5);
+            String reserved = resultSet.getString(6);
             product.setName(name);
             product.setPrice(price);
             product.setAmount(amount);
             product.setLink(link);
+            product.setReserved(reserved);
         } catch (SQLException e){
             System.out.println("Could not find product");
             e.printStackTrace();
@@ -161,5 +165,28 @@ public class ProductRepository {
         }
     }
 
+    public void updateReserved(Product product){
+        //SQL statement
+        final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
+
+        try {
+            //connect db
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
+
+            //prepared statement
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
+
+            //set parameters
+            int id = product.getId();
+
+            preparedStatement.setInt(1, id);
+
+            //execute statement
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Could not update product");
+            e.printStackTrace();
+        }
+    }
 
 }

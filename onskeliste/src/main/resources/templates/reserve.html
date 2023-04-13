@@ -21,6 +21,7 @@
             <th>Antal</th>
             <th>Link</th>
             <th>Reserver</th>
+            <th>Klik her for at reservere</th>
         </tr>
         </thead>
 
@@ -31,8 +32,11 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.amount}"></td>
             <td th:text="${product.link}"></td>
+            <td th:text="${product.reserved}"></td>
             <td>
-                <input type="checkbox">
+            <td>
+                <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button class="greenButton">Resevere</button></a>
+            </td>
             </td>
 
         </tr>

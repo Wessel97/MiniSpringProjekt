@@ -12,13 +12,24 @@ public class Product {
 
     public Product() {
     }
-
-    public Product(int id, String name, double price, int amount, String link, String reserved) {
+    public Product(int id, String name, double price, int amount, String link, String reserved){
         this.id = id;
         this.name = name;
         this.price = price;
         this.amount = amount;
         this.link = link;
+        this.reserved = reserved;
+    }
+    public Product(int id, String name, double price, int amount, String link){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+        this.link = link;
+    }
+
+    public Product(int id, String reserved){
+        this.id = id;
         this.reserved = reserved;
     }
 

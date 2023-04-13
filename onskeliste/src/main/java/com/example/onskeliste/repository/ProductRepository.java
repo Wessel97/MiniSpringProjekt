@@ -165,7 +165,30 @@ public class ProductRepository {
         }
     }
 
-    public void updateReserved(Product product){
+    public void updateReserved(int product){
+        //SQL statement
+        final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
+
+        try {
+            //connect db
+            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
+
+            //prepared statement
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
+
+            //set parameters
+            preparedStatement.setInt(1, product);
+            //execute statement
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Could not update product");
+            e.printStackTrace();
+        }
+    }
+
+}
+/*
+  public void updateReserved(product product){
         //SQL statement
         final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
 
@@ -189,4 +212,7 @@ public class ProductRepository {
         }
     }
 
-}
+
+
+
+ */

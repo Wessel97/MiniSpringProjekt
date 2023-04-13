@@ -113,6 +113,11 @@ public class HomeController {
         //fortæl Spring hvilken HTML-side, der skal vises
         return "redirect:/reserve";
     }
+
+    @GetMapping("/reservation")
+    public String showReservation(Model model) {
+        return "reservation";
+    }
     
 
 

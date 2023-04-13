@@ -9,6 +9,6 @@ CREATE TABLE wishlist.products (
                                    `link` VARCHAR(512) NULL,
                                    `reserved` VARCHAR(3) default 'NEJ',
                                    PRIMARY KEY (`id`));
-INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('Salomon', '1300', '1', 'www.netto.dk');
-INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('Bil', '15000', '2', 'www.henrikwessel.dk');
-INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('Chokolade', '15', '2', 'www.facebook.com');
+INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('Dåse tun', '130', '10', 'irma.dk');
+INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('BMW M4 Coupé', '1099900', '1', 'jan-nygaard.dk');
+INSERT INTO `wishlist`.`products` (`name`, `price`,`amount`,`link`) VALUES ('Ven', '0', '1', 'chat.openai.com');

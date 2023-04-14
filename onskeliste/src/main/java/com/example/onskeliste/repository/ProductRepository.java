@@ -165,7 +165,7 @@ public class ProductRepository {
         }
     }
 
-    public void updateReserved(int product){
+    public void updateReserved(int id){
         //SQL statement
         final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
 
@@ -177,7 +177,7 @@ public class ProductRepository {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
 
             //set parameters
-            preparedStatement.setInt(1, product);
+            preparedStatement.setInt(1, id);
             //execute statement
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

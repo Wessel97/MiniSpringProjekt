@@ -19,13 +19,13 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public String start(Model model) {
+    public String showStart(Model model) {
         return "start";
     }
 
 
     @GetMapping("/list")
-    public String index(Model model) {
+    public String showList(Model model) {
         model.addAttribute("products", productRepository.getAll());
         return "list";
     }
@@ -101,11 +101,11 @@ public class HomeController {
     }
 
     @GetMapping("/reserve/{id}")
-    public String showReserve(@PathVariable("id") int updateId, Model model) {
+    public String reserveButton(@PathVariable("id") int id, Model model) {
 
         //find produkt med id=updateId i databasen
-        Product updateReserve = productRepository.findProductById(updateId);
-        productRepository.updateReserved(updateId);
+        Product updateReserve = productRepository.findProductById(id);
+        productRepository.updateReserved(id);
         //System.out.println("Product to be reserved(id): ");
         //tilføj produkt til viewmodel, så det kan bruges i Thymeleaf
         model.addAttribute("product", updateReserve);

@@ -27,7 +27,7 @@ input[type=number], select {
     margin-right: auto;
 }
 #products td, #products th {
-    border: 1px solid #ddd;
+    border: 1px solid blue;
     padding: 8px;
 
 
@@ -37,7 +37,7 @@ input[type=number], select {
 }
 
 #products tr:hover {
-    background-color: #ddd;
+    background-color: red;
 }
 
 #products th {

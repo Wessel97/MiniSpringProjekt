@@ -1,0 +1,75 @@
+
+body {
+    margin:0;
+}
+
+.topnav {
+    background-color:#383a3d;
+    padding: 25px 25px;
+    box-shadow: 0px 5px 10px 2px rgba(0,0,0,.4);
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.background-1 {
+    background-color: #d4effa;
+    padding: 60px 60px;
+    z-index: -1;
+    position:relative;
+}
+
+.background-2 {
+    background-color: white;
+    padding: 60px 60px;
+}
+
+.background-3 {
+    background-color: #d4effa;
+    padding: 400px 400px;
+}
+
+.start-headline {
+    text-align: center;
+    font-family: "Tahoma", Times, serif;
+    font-size: 60px;
+    text-shadow: 0px 3px 10px rgba(0,0,0,.6);
+    margin-bottom: 20px;
+}
+
+.start-slogan {
+    text-align: center;
+    font-family: "Tahoma", Times, serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 0px 3px 10px rgba(0,0,0,.4);
+}
+
+.center-button {
+    text-align: center;
+}
+
+.submit-button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: "Tahoma", Times, serif;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
+    text-shadow: 0px 3px 10px rgba(0,0,0,.4);
+}
+
+.submit-button:hover {
+    background-color: #71C0F9;
+    color: black;
+    cursor:pointer;
+    box-shadow: 0px 5px 10px 2px rgba(0,0,0,.4);
+
+}

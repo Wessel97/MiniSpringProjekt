@@ -165,21 +165,36 @@ public class ProductRepository {
         }
     }
 
-    public void updateReserved(int id){
+    public void updateReservedYes(int id){
         //SQL statement
-        final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
+        final String UPDATE_QUERY_YES = "UPDATE products SET reserved = 'JA' WHERE id = ?";
+        final String UPDATE_QUERY_NO = "UPDATE products SET reserved = 'NEJ' WHERE id = ?";
 
         try {
             //connect db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
             //prepared statement
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
+            PreparedStatement preparedStatementYes = connection.prepareStatement(UPDATE_QUERY_YES);
+            PreparedStatement preparedStatementNo = connection.prepareStatement(UPDATE_QUERY_NO);
 
-            //set parameters
-            preparedStatement.setInt(1, id);
-            //execute statement
-            preparedStatement.executeUpdate();
+            Statement statement = connection.createStatement();
+            final String SQL_QUERY = "SELECT * FROM products";
+            ResultSet resultSet = statement.executeQuery(SQL_QUERY);
+            resultSet.next();
+            String reserved = resultSet.getString(6);
+
+
+            if(reserved.equals("JA"))
+            {
+                preparedStatementNo.setInt(1, id);
+                preparedStatementNo.executeUpdate();
+            }
+            else
+            {
+                preparedStatementYes.setInt(1, id);
+                preparedStatementYes.executeUpdate();
+            }
         } catch (SQLException e) {
             System.out.println("Could not update product");
             e.printStackTrace();
@@ -187,32 +202,3 @@ public class ProductRepository {
     }
 
 }
-/*
-  public void updateReserved(product product){
-        //SQL statement
-        final String UPDATE_QUERY = "UPDATE products SET reserved = 'JA' WHERE id = ?";
-
-        try {
-            //connect db
-            Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
-
-            //prepared statement
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
-
-            //set parameters
-            int id = product.getId();
-
-            preparedStatement.setInt(1, id);
-
-            //execute statement
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Could not update product");
-            e.printStackTrace();
-        }
-    }
-
-
-
-
- */

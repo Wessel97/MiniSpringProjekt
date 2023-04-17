@@ -101,16 +101,14 @@ public class HomeController {
     }
 
     @GetMapping("/reserve/{id}")
-    public String reserveButton(@PathVariable("id") int id, Model model) {
+    public String reserveButtonYes(@PathVariable("id") int id, Model model) {
 
-        //find produkt med id=updateId i databasen
         Product updateReserve = productRepository.findProductById(id);
-        productRepository.updateReserved(id);
-        //System.out.println("Product to be reserved(id): ");
-        //tilføj produkt til viewmodel, så det kan bruges i Thymeleaf
+
+        productRepository.updateReservedYes(id);
+
         model.addAttribute("product", updateReserve);
 
-        //fortæl Spring hvilken HTML-side, der skal vises
         return "redirect:/reserve";
     }
 

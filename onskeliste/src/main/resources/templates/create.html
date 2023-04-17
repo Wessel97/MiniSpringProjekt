@@ -3,36 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <link href="/images/list.png" rel="icon" type="image/icon type">
-    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <link th:href="@{/css/create.css}" rel="stylesheet"/>
     <title>Opret produkt</title>
 </head>
 
 <body>
-<div class="container" style = "position:relative; top:100px">
 
-    <h1>Tilføj Produkt Til Ønskelisten</h1>
+    <div>
+        <div class="topnav">
 
-    <form action="create" method="post">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
 
-        <p>Produkt Navn:</p>
-        <input id="name-field" name="product-name" type="text">
+            <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+            <a href="/reserve"><button class="nav-button-1" >SHARE WISHLIST</button></a>
 
-        <p>Produkt Pris:</p>
-        <input id="price-field" name="product-price" type="number">
-
-        <p>Produkt Antal:</p>
-        <input id="amount-field" name="product-amount" type="number">
-
-        <p>Produkt Link:</p>
-        <input id="link-field" name="product-link" type="text">
-
-        <div class="button-center">
-            <input type="submit" value="Opret produkt" class="addButton">
         </div>
+    </div>
 
-    </form>
+    <div>
+        <div class="background-1">
+            <p class="text-large">MAKE A WISH</p>
+            <p class="text-small">Add Wishes To Your Wishlist</p>
+        </div>
+    </div>
 
-</div>
+    <div class="container" style = "position:relative; top:100px">
+
+        <h1>Tilføj Produkt Til Ønskelisten</h1>
+
+        <form action="create" method="post">
+
+            <p>Produkt Navn:</p>
+            <input id="name-field" name="product-name" type="text">
+
+            <p>Produkt Pris:</p>
+            <input id="price-field" name="product-price" type="number">
+
+            <p>Produkt Antal:</p>
+            <input id="amount-field" name="product-amount" type="number">
+
+            <p>Produkt Link:</p>
+            <input id="link-field" name="product-link" type="text">
+
+            <div class="button-center">
+                <input type="submit" value="Opret produkt" class="submit-button">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="background-3">
+        <div>
+            <p class="text-bottom-left">DOWNLOAD APPEN</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
+
+            <p class="text-bottom-right">PRIVACY POLICY</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+
+        </div>
+    </div>
 </body>
 
 </html>

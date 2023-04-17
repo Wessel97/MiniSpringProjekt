@@ -9,89 +9,80 @@
 
 <body>
 
-<!-- Navbar -->
+    <div>
+        <div class="topnav">
 
-<div>
-    <div class="topnav">
+            <img src="/images/logo.png" alt="" class="logo">
 
-        <img src="/images/logo.png" alt="" class="logo">
-
-        <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
-        <a href="/list"><button class="nav-button-1" >CREATE NEW WISHLIST</button></a>
-
-    </div>
-</div>
-
-<!-- Upper part -->
-
-<div>
-    <div class="background-1">
-        <p class="text-left">START YOUR WISHLIST TODAY</p>
-        <p class="text-left-small">JOIN 4 OTHER PEOPLE AND EMBARK ON YOUR WISHING JOPURNEY</p>
-        <p class="text-left-small">WISH VAULT &nbsp;-&nbsp;  SECURE YOUR WISHES</p>
-    </div>
-</div>
-
-<!-- Table -->
-
-<div class="container">
-    <h1>Your Wishlist</h1>
-
-    <table id='products'>
-
-        <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Amount</th>
-            <th>Link</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr th:each="product : ${products}">
-
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.price}"></td>
-            <td th:text="${product.amount}"></td>
-            <td th:text="${product.link}"></td>
-
-            <td>
-                <a th:href="@{'/update/' + ${product.id}}" href="/update"><button class="greenButton">Opdater</button></a>
-            </td>
-
-            <td>
-                <a th:href="@{'/delete/' + ${product.id}}" href="/delete"><button class="greenButton">Slet</button></a>
-            </td>
-
-        </tr>
-        </tbody>
-
-    </table>
-
-    <div class="button-center">
-        <a href="/create"><button class="addButton1">Make A Wish</button></a>
-
-        <a href="/reserve"><button class="addButton2">Share</button></a>
-    </div>
-</div>
-
-
-<div>
-    <div class="background-3">
-        <div>
-            <p class="text-bottom-left">DOWNLOAD APPEN</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
-
-            <p class="text-bottom-right">PRIVACY POLICY</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+            <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+            <a href="/reserve"><button class="nav-button-1" >SHARE WISHLIST</button></a>
 
         </div>
     </div>
-</div>
 
+    <div>
+        <div class="background-1">
+            <p class="text-large">YOUR WISHLIST</p>
+            <p class="text-small">ADD, UPDATE, DELETE & SHARE</p>
+        </div>
+    </div>
+
+    <div class="container" style = "position:relative; top:100px">
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>PRICE</th>
+                <th>AMOUNT</th>
+                <th>LINK</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="product : ${products}">
+
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.amount}"></td>
+                <td th:text="${product.link}"></td>
+
+                <td>
+                    <a th:href="@{'/update/' + ${product.id}}" href="/update"><button style="margin-left: -12px" class="table-button">UPDATE</button></a>
+                </td>
+
+                <td>
+                    <a th:href="@{'/delete/' + ${product.id}}" href="/delete"><button style="margin-left: -12px"  class="table-button">DELETE</button></a>
+                </td>
+
+            </tr>
+            </tbody>
+
+        </table>
+
+        <div class="button-center">
+            <a href="/create"><button class="submit-button-1">MAKE A WISH</button></a>
+
+            <a href="/reserve"><button class="submit-button-2">SHARE</button></a>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="background-3">
+            <div>
+                <p class="text-bottom-left">DOWNLOAD APPEN</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
+
+                <p class="text-bottom-right">PRIVACY POLICY</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

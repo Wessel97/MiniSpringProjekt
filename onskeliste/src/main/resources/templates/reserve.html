@@ -9,83 +9,75 @@
 
 <body>
 
-<!-- Navbar -->
+    <div>
+        <div class="topnav">
 
-<div>
-    <div class="topnav">
+            <img src="/images/logo.png" alt="" class="logo">
 
-        <img src="/images/logo.png" alt="" class="logo">
-
-        <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
-        <a href="/list"><button class="nav-button-1" >CREATE NEW WISHLIST</button></a>
-
-    </div>
-</div>
-
-<!-- Upper part -->
-
-<div>
-    <div class="background-1">
-        <p class="text-left">START YOUR WISHLIST TODAY</p>
-        <p class="text-left-small">JOIN 4 OTHER PEOPLE AND EMBARK ON YOUR WISHING JOPURNEY</p>
-        <p class="text-left-small">WISH VAULT &nbsp;-&nbsp;  SECURE YOUR WISHES</p>
-    </div>
-</div>
-
-<!-- Table -->
-
-<div class="container" style = "position:relative; top:100px">
-    <h1>Hi! Choose And Reserve The Wishes You Want To Give</h1>
-
-    <table id='products'>
-
-        <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Amount</th>
-            <th>Link</th>
-            <th>Is it reserved?</th>
-            <th></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr th:each="product : ${products}">
-
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.price}"></td>
-            <td th:text="${product.amount}"></td>
-            <td th:text="${product.link}"></td>
-            <td th:text="${product.reserved}"></td>
-            <td>
-                <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button class="greenButton">Click Me!</button></a>
-            </td>
-
-
-        </tr>
-        </tbody>
-
-    </table>
-
-    <div class="button-center">
-        <a href="/reservation"><button class="addButton" style="width: 185px">Submit</button></a>
-    </div>
-
-</div>
-
-<div>
-    <div class="background-3">
-        <div>
-            <p class="text-bottom-left">DOWNLOAD APPEN</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
-
-            <p class="text-bottom-right">PRIVACY POLICY</p>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+            <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+            <a href="/list"><button class="nav-button-1" >CREATE NEW WISHLIST</button></a>
 
         </div>
     </div>
-</div>
+
+    <div>
+        <div class="background-1">
+            <p class="text-large">START YOUR WISHLIST TODAY</p>
+            <p class="text-small">Choose And Reserve The Wishes You Want To Give</p>
+        </div>
+    </div>
+
+    <div class="container" style = "position:relative; top:100px">
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>PRICE</th>
+                <th>AMOUNT</th>
+                <th>LINK</th>
+                <th>RESERVED</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="product : ${products}">
+
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.amount}"></td>
+                <td th:text="${product.link}"></td>
+                <td th:text="${product.reserved}"></td>
+                <td>
+                    <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button style="margin-left: -100px"  class="table-button">RESERVE</button></a>
+                </td>
+
+
+            </tr>
+            </tbody>
+
+        </table>
+
+        <div class="button-center">
+            <a href="/reservation"><button class="submit-button">SUBMIT</button></a>
+        </div>
+
+    </div>
+
+    <div>
+        <div class="background-3">
+            <div>
+                <p class="text-bottom-left">DOWNLOAD APPEN</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
+
+                <p class="text-bottom-right">PRIVACY POLICY</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -23,30 +23,28 @@
     <div>
         <div class="background-1">
             <p class="text-large">MAKE A WISH</p>
-            <p class="text-small">Add Wishes To Your Wishlist</p>
+            <p class="text-small">Add A Wish To Your Wishlist.</p>
         </div>
     </div>
 
     <div class="container" style = "position:relative; top:100px">
 
-        <h1>Tilføj Produkt Til Ønskelisten</h1>
-
         <form action="create" method="post">
 
-            <p>Produkt Navn:</p>
-            <input id="name-field" name="product-name" type="text">
+            <h1>Name</h1>
+            <input class="input-field" name="product-name" type="text" placeholder="Nvidia RTX 4090 ...">
 
-            <p>Produkt Pris:</p>
-            <input id="price-field" name="product-price" type="number">
+            <h1>Price</h1>
+            <input class="input-field" name="product-price" type="number" placeholder="14000 ...">
 
-            <p>Produkt Antal:</p>
-            <input id="amount-field" name="product-amount" type="number">
+            <h1>Amount</h1>
+            <input class="input-field" name="product-amount" type="number" placeholder="2 ...">
 
-            <p>Produkt Link:</p>
-            <input id="link-field" name="product-link" type="text">
+            <h1>Link</h1>
+            <input class="input-field" name="product-link" type="text" placeholder="proshop.dk ...">
 
             <div class="button-center">
-                <input type="submit" value="Opret produkt" class="submit-button">
+                <input type="submit" value="ADD WISH" class="submit-button">
             </div>
 
         </form>

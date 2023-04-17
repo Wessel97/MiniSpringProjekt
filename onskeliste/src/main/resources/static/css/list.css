@@ -1,16 +1,44 @@
 /* Navbar Styles */
-nav {
-    background-color: #333;
-    color: white;
+.logo {
+    width: 20%;
+    display: inline-block;
+    margin-bottom: -2.5%;
+    margin-left: 2.5%;
+}
+
+.topnav {
+    background-color: white;
+    padding: 2.5% 2.5%;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
-nav a {
+.nav-button-1,
+.nav-button-2 {
+    background-color: black;
+    border: none;
     color: white;
-    text-decoration: none;
+    font-family: "Arial Rounded MT Bold", Times, serif;
+    padding: 2.25% 3.5%;
+    text-align: center;
+    font-size: 1.25vw;
+    border-radius: 16px;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+.nav-button-1:hover,
+.nav-button-2:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.4);
+}
+
+.nav-button-2 {
+    margin-right: 5%;
 }
 
 /* Table Styles */
@@ -27,7 +55,7 @@ table {
 th,
 td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 1% 2%;
 }
 
 th {
@@ -43,26 +71,48 @@ tr:hover {
 /* Button Styles */
 .button-center {
     text-align: center;
-    margin-top: 20px;
-}
-
-.greenButton {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    cursor: pointer;
+    margin-top: 2.5%;
 }
 
 .addButton {
-    background-color: #008CBA;
-    color: white;
+    background-color: black;
     border: none;
-    padding: 10px 20px;
+    color: white;
+    font-family: "Arial Rounded MT Bold", Times, serif;
+    padding: 2.25% 3.5%;
+    text-align: center;
+    font-size: 1.25vw;
+    border-radius: 16px;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.2);
     cursor: pointer;
+    width: 18.5%;
+    margin-right: 2.5%;
 }
 
 .addButton:hover {
-    background-color: #006B8F;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.4);
+}
+
+.greenButton {
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: "Arial Rounded MT Bold", Times, serif;
+    padding: 2.25% 3.5%;
+    text-align: center;
+    font-size: 1.25vw;
+    border-radius: 16px;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.2);
+    cursor: pointer;
+    margin-right: 2.5%;
+}
+
+.greenButton:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 2.5% 5% 1% rgba(0,0,0,.4);
 }

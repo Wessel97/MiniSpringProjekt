@@ -3,25 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <link href="/images/list.png" rel="icon" type="image/icon type">
-    <link th:href="@{/css/main.css}" rel="stylesheet"/>
-    <title>Reservering</title>
+    <link th:href="@{/css/reserve.css}" rel="stylesheet"/>
+    <title>Wish Vault</title>
 </head>
 
 <body>
 
+<!-- Navbar -->
+
+<div>
+    <div class="topnav">
+
+        <img src="/images/logo.png" alt="" class="logo">
+
+        <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+        <a href="/list"><button class="nav-button-1" >CREATE NEW WISHLIST</button></a>
+
+    </div>
+</div>
+
+<!-- Upper part -->
+
+<div>
+    <div class="background-1">
+        <p class="text-left">START YOUR WISHLIST TODAY</p>
+        <p class="text-left-small">JOIN 4 OTHER PEOPLE AND EMBARK ON YOUR WISHING JOPURNEY</p>
+        <p class="text-left-small">WISH VAULT &nbsp;-&nbsp;  SECURE YOUR WISHES</p>
+    </div>
+</div>
+
+<!-- Table -->
+
 <div class="container" style = "position:relative; top:100px">
-    <h1>Reserver</h1>
+    <h1>Hi! Choose And Reserve The Wishes You Want To Give</h1>
 
     <table id='products'>
 
         <thead>
         <tr>
-            <th>Produktnavn</th>
-            <th>Pris</th>
-            <th>Antal</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Amount</th>
             <th>Link</th>
-            <th>Reserveret</th>
-            <th>Reservation</th>
+            <th>Is it reserved?</th>
+            <th></th>
         </tr>
         </thead>
 
@@ -34,7 +59,7 @@
             <td th:text="${product.link}"></td>
             <td th:text="${product.reserved}"></td>
             <td>
-                <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button class="greenButton">Reserver</button></a>
+                <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button class="greenButton">Click Me!</button></a>
             </td>
 
 
@@ -47,6 +72,19 @@
         <a href="/reservation"><button class="addButton" style="width: 185px">Submit</button></a>
     </div>
 
+</div>
+
+<div>
+    <div class="background-3">
+        <div>
+            <p class="text-bottom-left">DOWNLOAD APPEN</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
+
+            <p class="text-bottom-right">PRIVACY POLICY</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+
+        </div>
+    </div>
 </div>
 
 </body>

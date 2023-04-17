@@ -167,8 +167,8 @@ public class ProductRepository {
 
     public void updateReservedYes(int id){
         //SQL statement
-        final String UPDATE_QUERY_YES = "UPDATE products SET reserved = 'JA' WHERE id = ?";
-        final String UPDATE_QUERY_NO = "UPDATE products SET reserved = 'NEJ' WHERE id = ?";
+        final String UPDATE_QUERY_YES = "UPDATE products SET reserved = 'YES' WHERE id = ?";
+        final String UPDATE_QUERY_NO = "UPDATE products SET reserved = 'NO' WHERE id = ?";
 
         try {
             //connect db
@@ -185,7 +185,7 @@ public class ProductRepository {
             String reserved = resultSet.getString(6);
 
 
-            if(reserved.equals("JA"))
+            if(reserved.equals("YES"))
             {
                 preparedStatementNo.setInt(1, id);
                 preparedStatementNo.executeUpdate();

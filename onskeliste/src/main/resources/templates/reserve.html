@@ -48,7 +48,9 @@
                 <td th:text="${product.name}"></td>
                 <td th:text="${product.price}"></td>
                 <td th:text="${product.amount}"></td>
-                <td th:text="${product.link}"></td>
+                <td>
+                    <a class="text-link" th:text="${product.link}" th:href="${product.link}"></a>
+                </td>
                 <td th:text="${product.reserved}"></td>
                 <td>
                     <a th:href="@{'/reserve/' + ${product.id}}" href="/reserve"><button style="margin-left: -100px"  class="table-button">RESERVE</button></a>

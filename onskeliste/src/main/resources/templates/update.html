@@ -32,20 +32,19 @@
         <img src="/images/brands3.png" alt="" style="width:100%; margin:0;">
 
         <div>
-
-            <form action="/update" method="post">
+            <form action="/update" method="post" class="container">
                 <input class="input-field" name="product-id" type="hidden" th:value="${product.id}">
 
-                <p>Produkt Navn:</p>
+                <h1>NAME</h1>
                 <input class="input-field" name="product-name" type="text" th:value="${product.name}">
 
-                <p>Produkt Pris:</p>
+                <h1>PRICE</h1>
                 <input class="input-field" name="product-price" type="number" th:value="${product.price}">
 
-                <p>Produkt Antal:</p>
+                <h1>AMOUNT</h1>
                 <input class="input-field" name="product-amount" type="number" th:value="${product.amount}">
 
-                <p>Produkt Link:</p>
+                <h1>LINK</h1>
                 <input class="input-field" name="product-link" type="text" th:value="${product.link}">
 
                 <div class="button-center">

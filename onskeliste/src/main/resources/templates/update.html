@@ -3,35 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <link href="/images/list.png" rel="icon" type="image/icon type">
-    <link th:href="@{/css/main.css}" rel="stylesheet">
-    <title>Opdater produkt</title>
+    <link th:href="@{/css/update.css}" rel="stylesheet">
+    <title>Update Wish</title>
 </head>
 
 <body>
 
-<div class="container" style = "position:relative; top:100px">
-    <h1>Opdater Eksisterende Produkt</h1>
+    <div>
+        <div class="topnav">
 
-    <form action="/update" method="post">
-        <input id="id-field" name="product-id" type="hidden" th:value="${product.id}">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
 
-        <p>Produkt Navn:</p>
-        <input id="name-field" name="product-name" type="text" th:value="${product.name}">
+            <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+            <a href="/reserve"><button class="nav-button-1" >SHARE WISHLIST</button></a>
 
-        <p>Produkt Pris:</p>
-        <input id="price-field" name="product-price" type="number" th:value="${product.price}">
-
-        <p>Produkt Antal:</p>
-        <input id="amount-field" name="product-amount" type="number" th:value="${product.amount}">
-
-        <p>Produkt Link:</p>
-        <input id="link-field" name="product-link" type="text" th:value="${product.link}">
-
-        <div class="button-center">
-            <input class="addButton" type="submit" value="Opdater Produkt">
         </div>
-    </form>
+    </div>
 
-</div>
+    <div>
+        <div class="background-1">
+            <p class="text-large">UPDATE A WISH</p>
+            <p class="text-small">Update A Wish From Your Wishlist.</p>
+        </div>
+    </div>
+
+    <div class="background-products">
+
+        <img src="/images/brands3.png" alt="" style="width:100%; margin:0;">
+
+        <div>
+
+            <form action="/update" method="post">
+                <input class="input-field" name="product-id" type="hidden" th:value="${product.id}">
+
+                <p>Produkt Navn:</p>
+                <input class="input-field" name="product-name" type="text" th:value="${product.name}">
+
+                <p>Produkt Pris:</p>
+                <input class="input-field" name="product-price" type="number" th:value="${product.price}">
+
+                <p>Produkt Antal:</p>
+                <input class="input-field" name="product-amount" type="number" th:value="${product.amount}">
+
+                <p>Produkt Link:</p>
+                <input class="input-field" name="product-link" type="text" th:value="${product.link}">
+
+                <div class="button-center">
+                    <input class="submit-button" type="submit" value="UPDATE">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="background-3">
+        <div>
+            <p class="text-bottom-left">DOWNLOAD APPEN</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/download.png" alt="" class="download"></a>
+
+            <p class="text-bottom-right">PRIVACY POLICY</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button class="bottom-button" >CLICK HERE</button></a>
+
+        </div>
+    </div>
+
 </body>
 </html>

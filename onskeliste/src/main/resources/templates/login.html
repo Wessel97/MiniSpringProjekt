@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="/images/list.png" rel="icon" type="image/icon type">
+  <link th:href="@{/css/start.css}" rel="stylesheet"/>
+  <title>Wish Vault</title>
+</head>
+
+<body>
+
+<div>
+  <div class="topnav">
+
+    <img src="/images/logo.png" alt="" class="logo">
+
+    <a href="/list"><button class="nav-button-2" >CONTACT</button></a>
+    <a href="/login"><button class="nav-button-1" >LOGIN</button></a>
+
+  </div>
+</div>
+
+<div>
+  <div class="background-1">
+    <p class="text-large">LOGIN</p>
+    <form th:action="@{/login}" method="post">
+      <div class="input-group">
+        <input type="text" name="username" class="input-field" placeholder="Username" required>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" class="input-field" placeholder="Password" required>
+      </div>
+      <button type="submit" class="submit-button">LOGIN</button>
+    </form>
+  </div>
+</div>
+
+<div class="background-products">
+
+  <img src="/images/products4.png" alt="" style="width:100%; margin:0;">
+
+  <div class="center-button">
+    <a href="/list"><button class="submit-button" >CREATE NEW WISHLIST</button></a>
+  </div>
+
+</div>
+
+
+<div>
+  <div class="background-3">
+    <div>
+      <p class="text-bottom-left">DOWNLOAD APPEN</p>
+      <a href=""><img src="/images/download.png" alt="" class="download"></a>
+
+      <p class="text-bottom-right">PRIVACY POLICY</p>
+      <a href=""><button class="bottom-button">CLICK HERE</button></a>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

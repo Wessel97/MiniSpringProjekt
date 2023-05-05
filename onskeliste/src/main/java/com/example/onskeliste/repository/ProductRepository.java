@@ -51,19 +51,15 @@ public class ProductRepository {
 
     public void addProduct(Product product){
         try{
-            //connect to db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
             final String CREATE_QUERY = "INSERT INTO products(name, price, amount, link) VALUES  (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_QUERY);
 
-            //set attributer i prepared statement
             preparedStatement.setString(1, product.getName());
             preparedStatement.setDouble(2, product.getPrice());
             preparedStatement.setInt(3, product.getAmount());
             preparedStatement.setString(4, product.getLink());
 
-
-            //execute statement
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Could not create product");
@@ -76,13 +72,10 @@ public class ProductRepository {
         final String UPDATE_QUERY = "UPDATE products SET name = ?, price = ?, amount = ?, link = ? WHERE id = ?";
 
         try {
-            //connect db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
-            //prepared statement
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_QUERY);
 
-            //set parameters
             String name = product.getName();
             double price = product.getPrice();
             int amount  =  product.getAmount();
@@ -95,7 +88,6 @@ public class ProductRepository {
             preparedStatement.setString(4, link);
             preparedStatement.setInt(5, id);
 
-            //execute statement
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Could not update product");
@@ -104,24 +96,18 @@ public class ProductRepository {
     }
 
     public Product findProductById(int id){
-        //SQL-statement
         final String FIND_QUERY = "SELECT * FROM products WHERE id = ?";
         Product product = new Product();
         product.setId(id);
         try {
-            //db connection
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
-            //prepared statement
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_QUERY);
 
-            //set parameters
             preparedStatement.setInt(1, id);
 
-            //execute statement
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            //få product ud af resultset
             resultSet.next();
             String name = resultSet.getString(2);
             double price = resultSet.getDouble(3);
@@ -138,25 +124,19 @@ public class ProductRepository {
             e.printStackTrace();
         }
         System.out.println(product);
-        //return product
         return product;
     }
 
     public void deleteById(int id){
-        //SQL-query
         final String DELETE_QUERY = "DELETE FROM products WHERE id=?";
 
         try {
-            //connect til db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
-            //create statement
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_QUERY);
 
-            //set parameter
             preparedStatement.setInt(1, id);
 
-            //execute statement
             preparedStatement.executeUpdate();
 
         } catch (SQLException e){
@@ -166,15 +146,12 @@ public class ProductRepository {
     }
 
     public void updateReservedYes(int id){
-        //SQL statement
         final String UPDATE_QUERY_YES = "UPDATE products SET reserved = 'YES' WHERE id = ?";
         final String UPDATE_QUERY_NO = "UPDATE products SET reserved = 'NO' WHERE id = ?";
 
         try {
-            //connect db
             Connection connection = DriverManager.getConnection(DB_URL, UID, PWD);
 
-            //prepared statement
             PreparedStatement preparedStatementYes = connection.prepareStatement(UPDATE_QUERY_YES);
             PreparedStatement preparedStatementNo = connection.prepareStatement(UPDATE_QUERY_NO);
 
